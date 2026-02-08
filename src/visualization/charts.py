@@ -226,4 +226,27 @@ class ComplexityVisualizer:
         p_times = [0.001, 0.01, 0.1, 1.0]
         np_times = [0.1, 10, 1000, 100000]
         ax2.bar(['P', 'NP'], [p_times[-1], np_times[-1]], color=['blue', 'red'])
-        ax2.set_title('P vs NP Time (n=100k)', fontsize=12, fontweight
+        ax2.set_title('P vs NP Time (n=100k)', fontsize=12, fontweight='bold')
+        ax2.set_yscale('log')
+        
+        complexity_names = ['O(1)', 'O(log n)', 'O(n)', 'O(n²)', 'O(2ⁿ)']
+        max_sizes = [1e9, 1e8, 1e9, 31622, 30]
+        ax3.pie(max_sizes, labels=complexity_names, autopct='%1.1f%%')
+        ax3.set_title('Practical Problem Sizes', fontsize=12, fontweight='bold')
+        
+        heatmap_data = np.random.rand(5, 5)
+        im = ax4.imshow(heatmap_data, cmap='hot')
+        ax4.set_title('Algorithm Performance', fontsize=12, fontweight='bold')
+        plt.colorbar(im, ax=ax4)
+        
+        x = np.linspace(0, 10, 100)
+        for factor in [1, 2, 3]:
+            ax5.plot(x, x**factor, label=f'O(n^{factor})', linewidth=2)
+        ax5.set_title('Polynomial Growth', fontsize=12, fontweight='bold')
+        ax5.legend()
+        ax5.grid(True, alpha=0.3)
+        
+        plt.suptitle('P vs NP Visualization Dashboard', fontsize=16, fontweight='bold')
+        plt.tight_layout()
+        
+        return fig
