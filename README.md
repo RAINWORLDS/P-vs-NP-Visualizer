@@ -12,7 +12,7 @@ Interactive Python tool for visualizing computational complexity classes P and N
 
 ## Installation
 ```bash
-git clone https://github.com/yourusername/P-vs-NP-Visualizer.git
+git clone https://github.com/RAINWORLDS/P-vs-NP-Visualizer.git
 cd P-vs-NP-Visualizer
 pip install -r requirements.txt
 Quick Start
@@ -34,7 +34,6 @@ P-vs-NP-Visualizer/
 text
 
 ### **requirements.txt**
-```txt
 numpy>=1.21.0
 matplotlib>=3.5.0
 networkx>=2.8.0
